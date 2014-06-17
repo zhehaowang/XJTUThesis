@@ -37,13 +37,20 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}新网络架构}{2}{subsection.1.2.1}}
 \FN@pp@footnote@aux{1}{2}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}新网络架构的主要方向}{2}{subsection.1.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2.1}面向数据的研究方向}{2}{subsubsection.1.2.2.1}}
 \citation{NDNRefOriginal}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2.2}面向云计算的研究方向}{3}{subsubsection.1.2.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2.3}网络安全研究方向}{3}{subsubsection.1.2.2.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2.4}控制面、物理面分层的研究方向}{3}{subsubsection.1.2.2.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}NDN项目}{3}{subsection.1.2.3}}
 \FN@pp@footnote@aux{2}{3}
 \citation{V2VUseCaseRef}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.4}游戏联机}{4}{subsection.1.2.4}}
 \FN@pp@footnote@aux{3}{4}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}研究目的和意义}{4}{section.1.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.0.1}开发基于NDN的MMORPG应用，为更高效的网络游戏通信提供实现；}{4}{subsubsection.1.3.0.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.0.2}解决完全自组织带来的发现、同步及控制问题；}{4}{subsubsection.1.3.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.0.3}衡量NDN网络架构在类似用例下的实用性；为同类型项目提供命名空间开发的启发和样例。}{4}{subsubsection.1.3.0.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}研究内容}{5}{section.1.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.5}论文结构}{5}{section.1.5}}
 \FN@pp@footnotehinttrue 
@@ -104,14 +111,22 @@
 \@writefile{toe}{\contentsline {chapter}{\numberline {3}Analysis}{21}{chapter.3}}
 \newlabel{AnalysisChapter}{{3}{21}{系统需求分析}{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}系统需求}{21}{section.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.0.1}局部性(Locality)}{21}{subsubsection.3.1.0.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.0.2}实时性(Realtime-ness)}{21}{subsubsection.3.1.0.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3-1}{\ignorespaces 游戏应用的局部性要求\relax }}{22}{figure.caption.7}}
 \newlabel{fig:Locality}{{3-1}{22}{游戏应用的局部性要求\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.0.3}大规模可拓展性(Scalability)}{22}{subsubsection.3.1.0.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.0.4}健壮性(Robustness)}{22}{subsubsection.3.1.0.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}系统框架}{23}{section.3.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3-2}{\ignorespaces 系统框架层次图\relax }}{23}{figure.caption.8}}
 \newlabel{fig:AbstractStructure}{{3-2}{23}{系统框架层次图\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.0.1}NDND(NDN Daemon)}{23}{subsubsection.3.2.0.1}}
 \FN@pp@footnote@aux{12}{23}
 \FN@pp@footnote@aux{13}{23}
 \FN@pp@footnote@aux{14}{23}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.0.2}开发者函数库}{23}{subsubsection.3.2.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.0.3}同步模块}{23}{subsubsection.3.2.0.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.0.4}游戏应用}{24}{subsubsection.3.2.0.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}本章小结}{24}{section.3.3}}
 \FN@pp@footnotehinttrue 
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}系统设计}{25}{chapter.4}}
@@ -139,61 +154,76 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}面向对象设计}{32}{section.4.3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4-6}{\ignorespaces 同步模块的类图描述\relax }}{33}{figure.caption.14}}
 \newlabel{fig:DIscoveryModuleClassDiagram}{{4-6}{33}{同步模块的类图描述\relax }{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}本章小结}{34}{section.4.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.0.1}实体类(Instance)}{33}{subsubsection.4.3.0.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.0.2}发现请求接口类(DiscoveryInterestInterface)}{33}{subsubsection.4.3.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.0.3}发现应答接口类(DiscoveryDataInterface)}{34}{subsubsection.4.3.0.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.0.4}更新请求接口类(PositionInterestInterface)}{34}{subsubsection.4.3.0.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.0.5}更新应答接口类(PositionDataface)}{34}{subsubsection.4.3.0.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.0.6}八叉树节点类(Octree)}{34}{subsubsection.4.3.0.6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.0.7}游戏对象类(GameEntity)}{34}{subsubsection.4.3.0.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}本章小结}{35}{section.4.4}}
 \FN@pp@footnotehinttrue 
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}系统实现及测试}{35}{chapter.5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}系统实现及测试}{36}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toe}{\contentsline {chapter}{\numberline {5}Implementation}{35}{chapter.5}}
-\newlabel{ImplementationChapter}{{5}{35}{系统实现及测试}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}客户端函数库实现及测试}{35}{section.5.1}}
-\FN@pp@footnote@aux{16}{36}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}同步模块实现及测试}{37}{section.5.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}哈希函数、编码方式和参数选择}{37}{subsection.5.2.1}}
-\FN@pp@footnote@aux{17}{38}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}测试}{38}{subsection.5.2.2}}
-\FN@pp@footnote@aux{18}{38}
-\FN@pp@footnote@aux{19}{39}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}本章小结}{39}{section.5.3}}
+\@writefile{toe}{\contentsline {chapter}{\numberline {5}Implementation}{36}{chapter.5}}
+\newlabel{ImplementationChapter}{{5}{36}{系统实现及测试}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}客户端函数库实现及测试}{36}{section.5.1}}
+\FN@pp@footnote@aux{16}{37}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}同步模块实现及测试}{38}{section.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}哈希函数、编码方式和参数选择}{38}{subsection.5.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.1}32位FNV哈希常量}{38}{subsubsection.5.2.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.2}超时时间和间隔时间常量}{38}{subsubsection.5.2.1.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.3}八叉树层数及可以注册请求前缀的有效层数}{39}{subsubsection.5.2.1.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.4}掉线判定的超时位置请求个数}{39}{subsubsection.5.2.1.4}}
+\FN@pp@footnote@aux{17}{39}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}测试}{39}{subsection.5.2.2}}
+\FN@pp@footnote@aux{18}{40}
+\FN@pp@footnote@aux{19}{40}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}本章小结}{41}{section.5.3}}
 \FN@pp@footnotehinttrue 
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}系统分析、评估及优化}{40}{chapter.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}系统分析、评估及优化}{42}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toe}{\contentsline {chapter}{\numberline {6}Evaluation}{40}{chapter.6}}
-\newlabel{EvaluationChapter}{{6}{40}{系统分析、评估及优化}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}系统分析}{40}{section.6.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}系统优化}{41}{section.6.2}}
-\newlabel{OptimizationSection}{{6.2}{41}{系统优化}{section.6.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}多个数据请求合一}{41}{subsection.6.2.1}}
-\newlabel{MultiLevelOptimizationSection}{{6.2.1}{41}{多个数据请求合一}{subsection.6.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}渐进性发现}{42}{subsection.6.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}事件驱动为主的请求发送}{43}{subsection.6.2.3}}
+\@writefile{toe}{\contentsline {chapter}{\numberline {6}Evaluation}{42}{chapter.6}}
+\newlabel{EvaluationChapter}{{6}{42}{系统分析、评估及优化}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}系统分析}{42}{section.6.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.0.1}局部性}{42}{subsubsection.6.1.0.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.0.2}实时性}{42}{subsubsection.6.1.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.0.3}大规模可拓展性}{43}{subsubsection.6.1.0.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.0.4}健壮性}{43}{subsubsection.6.1.0.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}系统优化}{43}{section.6.2}}
+\newlabel{OptimizationSection}{{6.2}{43}{系统优化}{section.6.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}多个数据请求合一}{43}{subsection.6.2.1}}
+\newlabel{MultiLevelOptimizationSection}{{6.2.1}{43}{多个数据请求合一}{subsection.6.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}渐进性发现}{44}{subsection.6.2.2}}
 \citation{LSHKNNRef}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}其它设计思路及对比}{44}{section.6.3}}
-\newlabel{ComparisonSection}{{6.3}{44}{其它设计思路及对比}{section.6.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}基于位置敏感哈希的划分}{44}{subsection.6.3.1}}
-\FN@pp@footnote@aux{20}{45}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}基于可逆转Bloom Filter的知识表达}{46}{subsection.6.3.2}}
-\newlabel{IBFComparisonSection}{{6.3.2}{46}{基于可逆转Bloom Filter的知识表达}{subsection.6.3.2}{}}
-\FN@pp@footnote@aux{21}{46}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}事件驱动为主的请求发送}{46}{subsection.6.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}其它设计思路及对比}{46}{section.6.3}}
+\newlabel{ComparisonSection}{{6.3}{46}{其它设计思路及对比}{section.6.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}基于位置敏感哈希的划分}{47}{subsection.6.3.1}}
+\FN@pp@footnote@aux{20}{48}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}基于可逆转Bloom Filter的知识表达}{48}{subsection.6.3.2}}
+\newlabel{IBFComparisonSection}{{6.3.2}{48}{基于可逆转Bloom Filter的知识表达}{subsection.6.3.2}{}}
+\FN@pp@footnote@aux{21}{48}
 \citation{IPP2PMMORPG1}
 \citation{IPP2PMMORPG2}
 \citation{PubSubRef}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}部分P2P思路}{47}{subsection.6.3.3}}
-\newlabel{PartialP2PSection}{{6.3.3}{47}{部分P2P思路}{subsection.6.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.4}IP网络下的P2P实现}{47}{subsection.6.3.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.5}IP网络下的C/S实现}{48}{subsection.6.3.5}}
-\FN@pp@footnote@aux{22}{48}
-\FN@pp@footnote@aux{23}{48}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}本章小结}{49}{section.6.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}部分P2P思路}{49}{subsection.6.3.3}}
+\newlabel{PartialP2PSection}{{6.3.3}{49}{部分P2P思路}{subsection.6.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.4}IP网络下的P2P实现}{49}{subsection.6.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.5}IP网络下的C/S实现}{50}{subsection.6.3.5}}
+\FN@pp@footnote@aux{22}{50}
+\FN@pp@footnote@aux{23}{50}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}本章小结}{51}{section.6.4}}
 \FN@pp@footnotehinttrue 
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}结论与展望}{50}{chapter.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}结论与展望}{52}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toe}{\contentsline {chapter}{\numberline {7}Conclusion}{50}{chapter.7}}
-\newlabel{ConclusionChapter}{{7}{50}{结论与展望}{chapter.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}结论}{50}{section.7.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}展望}{50}{section.7.2}}
+\@writefile{toe}{\contentsline {chapter}{\numberline {7}Conclusion}{52}{chapter.7}}
+\newlabel{ConclusionChapter}{{7}{52}{结论与展望}{chapter.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}结论}{52}{section.7.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}展望}{52}{section.7.2}}
 \bibstyle{GBT7714-2005NLang-UTF8}
 \bibdata{bibliography.bib}
 \bibcite{NDNRefOriginal}{{1}{2009}{{Jacobson et al.}}{{}}}
@@ -211,7 +241,7 @@
 \@writefile{toc}{\ttl@change@i {\@ne }{subsection}{3.8em}{}{\thecontentslabel \quad }{}{\dotfill \contentspage [{\makebox [0pt][r]{\thecontentspage }}]}\relax }
 \@writefile{toc}{\ttl@change@v {subsection}{}{}{}\relax }
 \FN@pp@footnotehinttrue 
-\@writefile{toc}{\contentsline {chapter}{参考文献}{52}{section*.15}}
+\@writefile{toc}{\contentsline {chapter}{参考文献}{54}{section*.15}}
 \FN@pp@footnotehinttrue 
 \bibcite{IPP2PMMORPG1}{{9}{2006}{{Hampel et al.}}{{}}}
 \bibcite{LSHRef}{{10}{2004}{{Datar et al.}}{{}}}
@@ -221,19 +251,19 @@
 \bibcite{PubSubRef}{{14}{2013}{{Chen et al.}}{{}}}
 \FN@pp@footnotehinttrue 
 \FN@pp@footnotehinttrue 
-\@writefile{toc}{\contentsline {chapter}{附录1\hskip 1em\relax 文章翻译：Networking Named Content选段}{54}{appendix*.17}}
-\@writefile{toc}{\contentsline {section}{附录1.1\hskip 1em\relax 外文文献介绍及地址}{54}{section*.18}}
-\FN@pp@footnote@aux{24}{54}
-\@writefile{toc}{\contentsline {section}{附录1.2\hskip 1em\relax 中文译文}{54}{section*.18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.1}摘要}{54}{subsection.A.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.2}简介}{55}{subsection.A.2.2}}
-\FN@pp@footnote@aux{25}{56}
-\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.3}CCN节点模型}{56}{subsection.A.2.3}}
-\FN@pp@footnote@aux{26}{57}
-\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.4}传输}{59}{subsection.A.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.5}可靠性和流量控制}{60}{subsection.A.2.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.6}排序}{61}{subsection.A.2.6}}
+\@writefile{toc}{\contentsline {chapter}{附录1\hskip 1em\relax 文章翻译：Networking Named Content选段}{56}{appendix*.17}}
+\@writefile{toc}{\contentsline {section}{附录1.1\hskip 1em\relax 外文文献介绍及地址}{56}{section*.18}}
+\FN@pp@footnote@aux{24}{56}
+\@writefile{toc}{\contentsline {section}{附录1.2\hskip 1em\relax 中文译文}{56}{section*.18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.1}摘要}{56}{subsection.A.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.2}简介}{57}{subsection.A.2.2}}
+\FN@pp@footnote@aux{25}{58}
+\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.3}CCN节点模型}{58}{subsection.A.2.3}}
+\FN@pp@footnote@aux{26}{59}
+\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.4}传输}{61}{subsection.A.2.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.5}可靠性和流量控制}{62}{subsection.A.2.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {附录1.2.6}排序}{63}{subsection.A.2.6}}
 \FN@pp@footnotehinttrue 
-\@writefile{toc}{\contentsline {chapter}{致谢}{64}{appendix*.19}}
+\@writefile{toc}{\contentsline {chapter}{致谢}{66}{appendix*.19}}
 \FN@pp@footnotehinttrue 
 \ttl@finishall
