@@ -42,12 +42,12 @@
 \section{研究现状}
 \esection{CurrentStatus}
 
-\subsection*{新网络架构}
+\subsection{新网络架构}
 \par
 新网络架构是十年来的新兴的研究领域，旨在解决当前TCP/IP协议栈出现的无法满足用户需求的许多问题。当前由美国自然科学基金会(NSF)资助的未来网络结构\footnote{公布于NSF的站点，http://www.nets-fia.net/}(Future Internet Architecture)研究项目主要有NDN项目，MobilityFirst项目，NEBULA项目，eXpressive Internet Architecture项目，ChoiceNet项目。
 \par
 这些项目的共同特点是认识到了TCP/IP模型不再适合当前的网络使用模型。各项目在针对的点上并不相同，除了本文重点描述的NDN项目外，NEBULA项目利用大规模的云存储技术，使得服务提供、控制变得更加迅速和方便；MobilityFirst项目通过网络资源利用的优化，实现流动性和效率的平衡。
-\subsection*{新网络架构的主要方向}
+\subsection{新网络架构的主要方向}
 \par新网络架构的研究主要有以下方向，分别试图解决TCP/IP面临的不同问题。
 
 \begin{itemize}
@@ -62,7 +62,7 @@
 控制面、物理面分层的研究方向。SDN(Software Defined Networking)是该方向的代表。将网络的控制面和物理面分开，对两个模块分别进行设计、优化，从而提高网络的灵活性。
 \end{itemize}
 
-\subsection*{NDN项目}
+\subsection{NDN项目}
 \par
 NDN项目将数据及其名称，而不是网络地址，作为网络服务的最基本对象。由此带来了网络层及其上层协议的重新设计。
 NDN的研究始于2006年，2009年Van Jacobson将其初步实现命名为CCNx\cite{NDNRefOriginal}。PARC的研究小组提供了CCNx的实现\footnote{CCNx项目的实现及介绍，http://www.ccnx.org/。}：基于内容的网络架构(Content Centric Networking(CCN，CCNx))。
@@ -70,7 +70,7 @@ NDN的研究始于2006年，2009年Van Jacobson将其初步实现命名为CCNx\c
 在此之后，当今项目的理念仍然与最初的设计基本一致，而实现上已有了许多完善。在2014年，NDN小组完成了路由节点的新实现，NRD/NFD(NDN Routing Daemon/NDN Forwarding Daemon)和NDN-tlv，基于类型-长度-值(tlv)的NDN数据包结构；在2013年，完成了ChronoSync同步模型的设计、实现，完成了客户端函数库的面向对象实现等等。
 \par
 目前作者的指导老师，美国加州大学洛杉矶分校的Prof. Lixia Zhang 和Prof. Jeff Burke在领导项目的研究。
-\subsection*{游戏联机}
+\subsection{游戏联机}
 \par
 随着网络愈发便捷，多人联机网络游戏成为网络娱乐的重要组成部分。最为流行的MMORPG，魔兽世界，有着峰值超过1200万的注册用户\footnote{数据来源，http://www.statista.com/statistics/276601/number-of-world-of-warcraft-subscribers-by-quarter/}；而其开发公司，暴雪公司有着8000台服务器为该游戏提供联机支持。随着许多MMORPG的商业化，如何更廉价而高效的提供网络游戏联机服务也成为了网络研究的一个方向。近来，多篇基于IP网络架构的P2P游戏联机方案(ref)被多个研究组织提出。但是这些方案都基于TCP/IP协议栈，其P2P基本通过分布式哈希表(Distributed Hash Table)的部署实现。在\ref{ComparisonSection}部分，将对部分文章和思路做出更详细的总结和对比。
 \section{研究目的和意义}
