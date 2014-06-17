@@ -61,12 +61,13 @@
 \BOOKMARK [1][-]{section.7.2}{7.2 展望}{chapter.7}% 61
 \BOOKMARK [0][]{section*.15}{参考文献}{}% 62
 \BOOKMARK [0][]{appendix*.17}{附录1 文章翻译：Networking Named Content选段}{}% 63
-\BOOKMARK [1][-]{section*.18}{附录1.1 外文文献介绍及地址}{appendix*.17}% 64
-\BOOKMARK [1][-]{section*.18}{附录1.2 中文译文}{appendix*.17}% 65
-\BOOKMARK [2][-]{subsection.A.2.1}{附录1.2.1 摘要}{section*.18}% 66
-\BOOKMARK [2][-]{subsection.A.2.2}{附录1.2.2 简介}{section*.18}% 67
-\BOOKMARK [2][-]{subsection.A.2.3}{附录1.2.3 CCN节点模型}{section*.18}% 68
-\BOOKMARK [2][-]{subsection.A.2.4}{附录1.2.4 传输}{section*.18}% 69
-\BOOKMARK [2][-]{subsection.A.2.5}{附录1.2.5 可靠性和流量控制}{section*.18}% 70
-\BOOKMARK [2][-]{subsection.A.2.6}{附录1.2.6 排序}{section*.18}% 71
-\BOOKMARK [0][]{appendix*.19}{致谢}{}% 72
+\BOOKMARK [1][-]{section*.18}{附录1.1 外文文献介绍及原文}{appendix*.17}% 64
+\BOOKMARK [2][-]{subsection.A.1.1}{附录1.1.1 外文原文}{appendix*.17}% 65
+\BOOKMARK [1][-]{subsection.A.1.1}{附录1.2 中文译文}{appendix*.17}% 66
+\BOOKMARK [2][-]{subsection.A.2.1}{附录1.2.1 摘要}{subsection.A.1.1}% 67
+\BOOKMARK [2][-]{subsection.A.2.2}{附录1.2.2 简介}{subsection.A.1.1}% 68
+\BOOKMARK [2][-]{subsection.A.2.3}{附录1.2.3 CCN节点模型}{subsection.A.1.1}% 69
+\BOOKMARK [2][-]{subsection.A.2.4}{附录1.2.4 传输}{subsection.A.1.1}% 70
+\BOOKMARK [2][-]{subsection.A.2.5}{附录1.2.5 可靠性和流量控制}{subsection.A.1.1}% 71
+\BOOKMARK [2][-]{subsection.A.2.6}{附录1.2.6 排序}{subsection.A.1.1}% 72
+\BOOKMARK [0][]{appendix*.19}{致谢}{}% 73

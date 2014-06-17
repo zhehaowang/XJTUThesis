@@ -273,12 +273,23 @@
 \newcommand\xjtueinfopage{}
 \newcommand\xjtucontent{}
 \newcommand\xjtuendcontent{}
+
+% for toc line spacing
+% \RequirePackage{setspace}
+
 \newcommand\xjtutoc{
+    \linespread{1} \selectfont
     \tableofcontents
     \ifxjtu@bachelor\else
         \noindent 声明
     \fi
     \chaptermark{目\quad 录}
+    
+    \ifxjtu@bigskip
+      \linespread{1.5} \selectfont
+    \else
+      \linespread{1.2} \selectfont
+    \fi
 }
 \newcommand\xjtutoe{
     \tableofengcontents

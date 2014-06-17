@@ -97,13 +97,14 @@
 \ttl@change@v {subsection}{}{}{}\relax 
 \contentsline {chapter}{参考文献}{54}{section*.15}
 \contentsline {chapter}{附录1\hskip 1em\relax 文章翻译：Networking Named Content选段}{56}{appendix*.17}
-\contentsline {section}{附录1.1\hskip 1em\relax 外文文献介绍及地址}{56}{section*.18}
-\contentsline {section}{附录1.2\hskip 1em\relax 中文译文}{56}{section*.18}
-\contentsline {subsection}{\numberline {附录1.2.1}摘要}{56}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {附录1.2.2}简介}{57}{subsection.A.2.2}
-\contentsline {subsection}{\numberline {附录1.2.3}CCN节点模型}{58}{subsection.A.2.3}
-\contentsline {subsection}{\numberline {附录1.2.4}传输}{61}{subsection.A.2.4}
-\contentsline {subsection}{\numberline {附录1.2.5}可靠性和流量控制}{62}{subsection.A.2.5}
-\contentsline {subsection}{\numberline {附录1.2.6}排序}{63}{subsection.A.2.6}
-\contentsline {chapter}{致谢}{66}{appendix*.19}
+\contentsline {section}{附录1.1\hskip 1em\relax 外文文献介绍及原文}{56}{section*.18}
+\contentsline {subsection}{\numberline {附录1.1.1}外文原文}{56}{subsection.A.1.1}
+\contentsline {section}{附录1.2\hskip 1em\relax 中文译文}{66}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {附录1.2.1}摘要}{66}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {附录1.2.2}简介}{67}{subsection.A.2.2}
+\contentsline {subsection}{\numberline {附录1.2.3}CCN节点模型}{68}{subsection.A.2.3}
+\contentsline {subsection}{\numberline {附录1.2.4}传输}{71}{subsection.A.2.4}
+\contentsline {subsection}{\numberline {附录1.2.5}可靠性和流量控制}{72}{subsection.A.2.5}
+\contentsline {subsection}{\numberline {附录1.2.6}排序}{73}{subsection.A.2.6}
+\contentsline {chapter}{致谢}{76}{appendix*.19}
 \contentsfinish 
