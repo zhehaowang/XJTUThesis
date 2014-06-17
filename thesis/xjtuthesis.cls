@@ -94,7 +94,11 @@
 
 % Header & footer
 \RequirePackage{fancyhdr}
-\RequirePackage[perpage]{footmisc}
+% notes by zhehao: to make it more 'word-like', ragged bottom could be a good choice.
+% Original line disabled, swapped for the following
+%\RequirePackage[perpage]{footmisc}
+\raggedbottom
+\RequirePackage[bottom]{footmisc}
 
 % titleformat
 \RequirePackage{titlesec,titletoc}
