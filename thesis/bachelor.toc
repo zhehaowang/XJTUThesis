@@ -1,0 +1,53 @@
+\contentsline {chapter}{\numberline {1}绪论}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}研究背景}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}研究现状}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}研究目的和意义}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}研究内容}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}论文结构}{4}{section.1.5}
+\contentsline {chapter}{\numberline {2}相关技术概述}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}命名数据网}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}命名数据网同步模型}{9}{section.2.2}
+\contentsline {section}{\numberline {2.3}命名数据网开发者函数库}{12}{section.2.3}
+\contentsline {section}{\numberline {2.4}游戏联机技术}{12}{section.2.4}
+\contentsline {section}{\numberline {2.5}k最近邻居相关的数据结构}{13}{section.2.5}
+\contentsline {section}{\numberline {2.6}名称集表示相关的数据结构}{15}{section.2.6}
+\contentsline {section}{\numberline {2.7}开发引擎Unity3D}{16}{section.2.7}
+\contentsline {section}{\numberline {2.8}本章小结}{16}{section.2.8}
+\contentsline {chapter}{\numberline {3}系统需求分析}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}系统需求}{18}{section.3.1}
+\contentsline {section}{\numberline {3.2}系统框架}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}本章小结}{20}{section.3.3}
+\contentsline {chapter}{\numberline {4}系统设计}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}客户端函数库}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}设计详述}{21}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}八叉树划分}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}发现模块}{23}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}更新模块}{25}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}面向对象设计}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}本章小结}{29}{section.4.4}
+\contentsline {chapter}{\numberline {5}系统实现及测试}{30}{chapter.5}
+\contentsline {section}{\numberline {5.1}客户端函数库实现及测试}{30}{section.5.1}
+\contentsline {section}{\numberline {5.2}同步模块实现及测试}{31}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}哈希函数、编码方式和参数选择}{31}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}测试}{32}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}本章小结}{33}{section.5.3}
+\contentsline {chapter}{\numberline {6}系统分析、评估及优化}{34}{chapter.6}
+\contentsline {section}{\numberline {6.1}系统分析}{34}{section.6.1}
+\contentsline {section}{\numberline {6.2}系统优化}{35}{section.6.2}
+\contentsline {section}{\numberline {6.3}其它设计思路及对比}{37}{section.6.3}
+\contentsline {section}{\numberline {6.4}本章小结}{41}{section.6.4}
+\contentsline {chapter}{\numberline {7}结论与展望}{42}{chapter.7}
+\contentsline {section}{\numberline {7.1}结论}{42}{section.7.1}
+\contentsline {section}{\numberline {7.2}展望}{42}{section.7.2}
+\ttl@change@i {\@ne }{chapter}{0em}{}{\thecontentslabel \quad }{}{\dotfill \contentspage [{\makebox [0pt][r]{\thecontentspage }}]}\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\ttl@change@i {\@ne }{section}{1.5em}{}{\thecontentslabel \quad }{}{\dotfill \contentspage [{\makebox [0pt][r]{\thecontentspage }}]}\relax 
+\ttl@change@v {section}{}{}{}\relax 
+\ttl@change@i {\@ne }{subsection}{3.8em}{}{\thecontentslabel \quad }{}{\dotfill \contentspage [{\makebox [0pt][r]{\thecontentspage }}]}\relax 
+\ttl@change@v {subsection}{}{}{}\relax 
+\contentsline {chapter}{参考文献}{43}{section*.15}
+\contentsline {chapter}{附录1\hskip 1em\relax 文章翻译：Networking Named Content选段}{45}{appendix*.17}
+\contentsline {section}{附录1.1\hskip 1em\relax 外文文献介绍及地址}{45}{section*.18}
+\contentsline {section}{附录1.2\hskip 1em\relax 中文译文}{45}{section*.18}
+\contentsline {chapter}{致谢}{53}{appendix*.19}
+\contentsfinish 

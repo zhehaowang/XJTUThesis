@@ -1,0 +1,124 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Jacobson et al.(2009)]{NDNRefOriginal}
+JACOBSON V, SMETTERS D~K, THORNTON J~D, et al.
+\newblock
+\newblock Networking Named Content[C]//Proceedings of the 5th International
+  Conference on Emerging Networking Experiments and Technologies.
+\newblock 2009.
+\newblock New York, NY, USA: ACM, CoNEXT '09,
+  \url{http://doi.acm.org/10.1145/1658939.1658941}.
+
+\bibitem[Wang et al.(2012)]{V2VUseCaseRef}
+WANG L, WAKIKAWA R, KUNTZ R, et al.
+\newblock
+\newblock Data naming in Vehicle-to-Vehicle communications[C]//Computer
+  Communications Workshops (INFOCOM WKSHPS), 2012 IEEE Conference on.
+\newblock .[S.l.]: [s.n.] , 2012:328--333.
+
+\bibitem[Yuan et al.(2012)]{NDNDSRef}
+YUAN H, SONG T, CROWLEY P.
+\newblock
+\newblock {S}calable {NDN} {F}orwarding: {C}oncepts, {I}ssues and
+  {P}rinciples[C]//Computer Communications and Networks (ICCCN), 2012 21st
+  International Conference on.
+\newblock .[S.l.]: [s.n.] , 2012:1--9.
+
+\bibitem[Zhu et al.(2012)]{ChronosRef}
+ZHU Z, BIAN C, AFANASYEV A, et al.
+\newblock
+\newblock Chronos: Serverless Multi-User Chat Over NDN[R].[S.l.]: NDN, 2012.
+\newblock \url{http://named-data.net/techreports.html}.
+
+\bibitem[Zhu and Afanasyev(2013)]{ChronosRef2}
+ZHU Z, AFANASYEV A.
+\newblock
+\newblock Let's ChronoSync: Decentralized dataset state synchronization in
+  Named Data Networking[C]//Network Protocols (ICNP), 2013 21st IEEE
+  International Conference on.
+\newblock .[S.l.]: [s.n.] , 2013:1--10.
+
+\bibitem[Claypool et al.(2003)]{IPMOGInfo}
+CLAYPOOL M, LAPOINT D, WINSLOW J.
+\newblock
+\newblock Network analysis of Counter-strike and Starcraft[C]//Performance,
+  Computing, and Communications Conference, 2003. Conference Proceedings of the
+  2003 IEEE International.
+\newblock .[S.l.]: [s.n.] , 2003:261--268.
+
+\bibitem[Douglas et al.(2005)]{IPP2PMMORPG}
+DOUGLAS S, TANIN E, HARWOOD A, et al.
+\newblock
+\newblock
+\newblock Enabling Massively Multi-Player Online Gaming Applications on a P2P
+  Architecture[C]//In Proceedings of the IEEE International Conference on
+  Information and Automation.[S.l.]: IEEE, 2005:7--12.
+
+\bibitem[Ferretti(2008)]{IPP2PMMORPG2}
+FERRETTI S.
+\newblock
+\newblock
+\newblock A synchronization protocol for supporting peer-to-peer multiplayer
+  online games in overlay networks[C]//In DEBS '08: Proceedings of the second
+  international conference on Distributed event-based systems.[S.l.]: ACM,
+  2008:83--94.
+
+\bibitem[Hampel et al.(2006)]{IPP2PMMORPG1}
+HAMPEL T, BOPP T, HINN R.
+\newblock
+\newblock A Peer-to-peer Architecture for Massive Multiplayer Online
+  Games[C]//Proceedings of 5th ACM SIGCOMM Workshop on Network and System
+  Support for Games.
+\newblock 2006.
+\newblock New York, NY, USA: ACM, NetGames '06,
+  \url{http://doi.acm.org/10.1145/1230040.1230058}.
+
+\bibitem[Datar et al.(2004)]{LSHRef}
+DATAR M, IMMORLICA N, INDYK P, et al.
+\newblock
+\newblock Locality-sensitive Hashing Scheme Based on P-stable
+  Distributions[C]//Proceedings of the Twentieth Annual Symposium on
+  Computational Geometry.
+\newblock 2004.
+\newblock New York, NY, USA: ACM, SCG '04,
+  \url{http://doi.acm.org/10.1145/997817.997857}.
+
+\bibitem[Eppstein et al.(2011)]{IBFRef}
+EPPSTEIN D, GOODRICH M~T, UYEDA F, et al.
+\newblock {What's the difference?: efficient set reconciliation without prior
+  context}[J].
+\newblock SIGCOMM Comput. Commun. Rev., 2011, 41(4):218--229.
+\newblock \url{http://dx.doi.org/10.1145/2043164.2018462}.
+
+\bibitem[Kumar et al.(2012)]{OctreeRef}
+KUMAR S, SHI L, AHMED N, et al.
+\newblock {CarSpeak: a content-centric network for autonomous driving}[J].
+\newblock SIGCOMM Comput. Commun. Rev., 2012, 42(4):259--270.
+\newblock \url{http://dx.doi.org/10.1145/2377677.2377724}.
+
+\bibitem[Pan and Manocha(2011)]{LSHKNNRef}
+PAN J, MANOCHA D.
+\newblock
+\newblock Fast GPU-based Locality Sensitive Hashing for K-nearest Neighbor
+  Computation[C]//Proceedings of the 19th ACM SIGSPATIAL International
+  Conference on Advances in Geographic Information Systems.
+\newblock 2011.
+\newblock New York, NY, USA: ACM, GIS '11,
+  \url{http://doi.acm.org/10.1145/2093973.2094002}.
+
+\bibitem[Chen et al.(2013)]{PubSubRef}
+CHEN J, ARUMAITHURAI M, FU X, et al.
+\newblock
+\newblock Reliable Publish/Subscribe in Content-centric
+  Networks[C]//Proceedings of the 3rd ACM SIGCOMM Workshop on
+  Information-centric Networking.
+\newblock 2013.
+\newblock New York, NY, USA: ACM, ICN '13,
+  \url{http://doi.acm.org/10.1145/2491224.2491229}.
+
+\end{thebibliography}

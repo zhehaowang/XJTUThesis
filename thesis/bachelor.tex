@@ -1,0 +1,77 @@
+% multiple1902 <multiple1902@gmail.com>
+% bachelor.tex
+% Copyright 2011~2012, multiple1902 (Weisi Dai)
+% https://code.google.com/p/xjtuthesis/
+% 
+% It is strongly recommended that you read documentations located at
+%   http://code.google.com/p/xjtuthesis/wiki/Landing?tm=6
+% in advance of your compilation if you have not read them before.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Weisi Dai.
+%
+\documentclass[
+    bachelor, 
+    %bigskip, % sets linespread factor to 1.5
+    truefont, % just turn it on when using Windows
+    %nofont, % remember to manally set the fonts
+    pdflinks,
+    %colorlinks,
+    compact,
+    ]{xjtuthesis}
+
+% Compact is enabled so that blank page VI does not appear
+
+\graphicspath{{figures/}}
+
+\begin{document}
+\input{meta.tex}
+\xjtucinfopage
+\xjtueinfopage
+\xjtutoc
+\clearpage
+
+\xjtucontent
+\input{pages/preface.tex}
+\input{pages/relatedtech.tex}
+\input{pages/analysis.tex}
+\input{pages/design.tex}
+\input{pages/implementation.tex}
+\input{pages/evaluation.tex}
+\input{pages/conclusion.tex}
+
+\xjtuendcontent
+
+\xjtubib{bibliography.bib}
+
+\xjtuappendix
+\input{pages/appendice.tex}
+\xjtuendappendix
+
+\xjtuspchapter{致谢}{致\qquad 谢}
+\par
+首先感谢我的指导老师，西安交通大学的安健老师，美国加州大学洛杉矶分校的Prof. Jeff Burke和Prof. Lixia Zhang的耐心指导。
+\par
+感谢西安交通大学和加州大学洛杉矶分校为我提供的机会。
+\par
+感谢父母对我的支持。
+\par
+感谢电信硕01班班主任朱正东老师、刘纯亮老师和各位同学对我的帮助。
+\par
+感谢Xingyu，Zening，Jeff. T，Alex，Anmol，Daisuke，Cole，Zoe等UCLA的同事、同学对我工作的兴趣，提供的支持和帮助。
+\par
+感谢Panasonic的Muramoto先生和西北大学的Xiaojiang Chen教授对我工作表示的浓厚兴趣。
+\par
+感谢XJTUThesis项目，特别感谢戴唯思同学提供\LaTeX模板。
+
+\end{document}
+

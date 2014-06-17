@@ -1,0 +1,59 @@
+% multiple1902 <multiple1902@gmail.com>
+% meta.tex
+% Copyright 2011~2012, multiple1902 (Weisi Dai)
+% https://code.google.com/p/xjtuthesis/
+% 
+% It is strongly recommended that you read documentations located at
+%   http://code.google.com/p/xjtuthesis/wiki/Landing?tm=6
+% in advance of your compilation if you have not read them before.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Weisi Dai.
+%
+\ctitle{命名数据网下多人联机游戏应用的设计}
+\cauthor{王哲昊}
+\csubject{计算机科学与技术}
+\csupervisor{安健}
+\ckeywords{命名数据网，分布式虚拟环境，同步，点对点结构}
+\cproddate{\the\year 年\the\month 月}
+\ctype{应用设计}
+
+\etitle{Multiplayer Online Game Design for Named Data Networking}
+\eauthor{Zhehao Wang}
+\esupervisor{Jian An}
+\ekeywords{Named data networking, distributed virtual environment, peer-to-peer structure}
+\ecate{School of Electronic \& Information Engineering}
+\esubject{Computer Science \& Technology}
+\eproddate{\monthname{\month}\ \the\year}
+\etype{Application Design}
+
+\cabstract{
+\par
+随着网络硬件和网络应用的发展，传统的基于TCP/IP协议栈的网络已经无法很好的适应当今网络的需求。命名数据网是一种以数据及其名称为基本对象的新网络架构。本文提出、测试并理论分析了一个在NDN网络中运行的纯点对点多人联机游戏应用的设计方案。
+\par
+该方案面临的主要问题是在分布环境中各个节点信息的同步，即每个节点需要通过和网络交互，获取谁在我的周围，以及它在哪里，在做什么等问题的答案。
+\par
+方案首先对虚拟环境进行固定的八叉树划分，并对划分后得到的每个小立方体中的对象的名称集进行同步。各个节点定时广播本地感知范围内的立方体的名称集的消息摘要，收到不同的消息摘要的节点回复本地的名称集。收到包含不同名称的数据应答的节点根据其中的名称构成位置和动作数据请求，从而获得具体节点的位置，并决定是否渲染，以及是否加入到本地对应立方体的名称集中。
+\par
+方案满足了应用局部性、实时性、大规模可拓展性和健壮性的要求。在详细叙述方案后，本文简述了实际测试的结果，提出了渐进性发现等三点优化措施，并详细分析了和基于地点敏感哈希的划分等之前提出的三种设计方案，以及IP网络下两种方案的理论对比。
+}
+
+\eabstract{
+\par
+As network infrastructure develops, the model proposed by TCP/IP protocol stack no longer fits in the network usage model of today's. Named data networking is a new internet architecture where 'content name' takes the place of 'IP address' to become the first class citizen of the network. In this paper, a working design for a massive multiplayer online game application running on named data network is proposed, tested and analyzed.
+\par
+The biggest challenge the application faced was synchronization in a distributed virtual environment, in which every peer running the game need to know their surroundings and reach consistent conclusions about who's in their vicinity and what they are doing.
+\par
+To solve this problem, a static octree partitioning of the virtual environment is proposed. Peers who care about the same octant should synchronize their name dataset belonging to that octant. In order to do this, broadcast interests containing a digest of the name dataset are expressed periodically. Those who receive the interest, whose digest may differ from that of the interest in question, should respond with their own set of names. Using such names, interests with routable prefixes can be expressed towards the location of the peers. And the interest issuers can decide whether the peers should be rendered locally, based on the data in the response.
+\par
+This design satisfies the demand of locality, realtime-ness, scalability, and robustness. Testing results are given after the description of our design. Three optimizations like progressive discovery are then proposed, and the design is evaluated theoretically with three of our earlier designs like using LSH for partioning, and two common approaches in IP network.
+}
