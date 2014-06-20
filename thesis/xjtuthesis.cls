@@ -89,6 +89,9 @@
 \RequirePackage[slantfont,boldfont,CJKnumber]{xeCJK}
 \punctstyle{hangmobanjiao}
 
+% For subfigures
+%\RequirePackage{subcaption}
+
 % Padding
 \RequirePackage[left=2.6cm, right=2.6cm,top=3.0cm,bottom=2.5cm,a4paper]{geometry}
 

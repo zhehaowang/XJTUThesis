@@ -44,7 +44,7 @@
 \BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 测试}{section.5.2}% 44
 \BOOKMARK [1][-]{section.5.3}{5.3 本章小结}{chapter.5}% 45
 \BOOKMARK [0][]{chapter.6}{6 系统分析、评估及优化}{}% 46
-\BOOKMARK [1][-]{section.6.1}{6.1 系统分析}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.1}{6.1 系统数据及分析}{chapter.6}% 47
 \BOOKMARK [1][-]{section.6.2}{6.2 系统优化}{chapter.6}% 48
 \BOOKMARK [2][-]{subsection.6.2.1}{6.2.1 多个数据请求合一}{section.6.2}% 49
 \BOOKMARK [2][-]{subsection.6.2.2}{6.2.2 渐进性发现}{section.6.2}% 50
@@ -59,15 +59,15 @@
 \BOOKMARK [0][]{chapter.7}{7 结论与展望}{}% 59
 \BOOKMARK [1][-]{section.7.1}{7.1 结论}{chapter.7}% 60
 \BOOKMARK [1][-]{section.7.2}{7.2 展望}{chapter.7}% 61
-\BOOKMARK [0][]{section*.15}{参考文献}{}% 62
-\BOOKMARK [0][]{appendix*.17}{附录1 文章翻译：Networking Named Content选段}{}% 63
-\BOOKMARK [1][-]{section*.18}{附录1.1 外文文献介绍及原文}{appendix*.17}% 64
-\BOOKMARK [2][-]{subsection.A.1.1}{附录1.1.1 外文原文}{appendix*.17}% 65
-\BOOKMARK [1][-]{subsection.A.1.1}{附录1.2 中文译文}{appendix*.17}% 66
+\BOOKMARK [0][]{section*.27}{参考文献}{}% 62
+\BOOKMARK [0][]{appendix*.29}{附录1 文章翻译：Networking Named Content选段}{}% 63
+\BOOKMARK [1][-]{section*.30}{附录1.1 外文文献介绍及原文}{appendix*.29}% 64
+\BOOKMARK [2][-]{subsection.A.1.1}{附录1.1.1 外文原文}{appendix*.29}% 65
+\BOOKMARK [1][-]{subsection.A.1.1}{附录1.2 中文译文}{appendix*.29}% 66
 \BOOKMARK [2][-]{subsection.A.2.1}{附录1.2.1 摘要}{subsection.A.1.1}% 67
 \BOOKMARK [2][-]{subsection.A.2.2}{附录1.2.2 简介}{subsection.A.1.1}% 68
 \BOOKMARK [2][-]{subsection.A.2.3}{附录1.2.3 CCN节点模型}{subsection.A.1.1}% 69
 \BOOKMARK [2][-]{subsection.A.2.4}{附录1.2.4 传输}{subsection.A.1.1}% 70
 \BOOKMARK [2][-]{subsection.A.2.5}{附录1.2.5 可靠性和流量控制}{subsection.A.1.1}% 71
 \BOOKMARK [2][-]{subsection.A.2.6}{附录1.2.6 排序}{subsection.A.1.1}% 72
-\BOOKMARK [0][]{appendix*.19}{致谢}{}% 73
+\BOOKMARK [0][]{appendix*.31}{致谢}{}% 73
