@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2013.5.30)  20 JUN 2014 15:10
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2013.5.30)  20 JUN 2014 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1474,20 +1474,7 @@ Overfull \hbox (2.0075pt too wide) has occurred while \output is active
  []
  []
 
-[9]
-Overfull \hbox (2.0075pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.0075pt too wide) has occurred while \output is active
- []
- []
-
-[10
-
-
-] (./pages/preface.tex
+[9] (./pages/preface.tex
 Chapter 1.
 LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 47.
 
@@ -1534,6 +1521,8 @@ Overfull \hbox (2.0075pt too wide) has occurred while \output is active
  []
 
 [1
+
+
 
 ]
 Overfull \hbox (2.0075pt too wide) has occurred while \output is active
@@ -2397,12 +2386,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 76.
  ) 
 Here is how much of TeX's memory you used:
- 27016 strings out of 493938
- 529442 string characters out of 6148857
- 565395 words of memory out of 5000000
- 29926 multiletter control sequences out of 15000+600000
- 13734 words of font info for 95 fonts, out of 8000000 for 9000
+ 27024 strings out of 493938
+ 529623 string characters out of 6148857
+ 565412 words of memory out of 5000000
+ 29933 multiletter control sequences out of 15000+600000
+ 13742 words of font info for 96 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 53i,15n,58p,1426b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,15n,58p,1426b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bachelor.pdf (73 pages).
+Output written on bachelor.pdf (72 pages).
