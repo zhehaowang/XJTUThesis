@@ -6,5 +6,6 @@
 !*.tex
 !*.sty
 !*.cls
+!*.bib
 !README
 !.gitignore
