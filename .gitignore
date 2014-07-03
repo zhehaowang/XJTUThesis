@@ -1,9 +1,9 @@
 *
 !*/
+!base/
 !thesis/
 !*.tex
 !*.sty
 !*.cls
-!base/
 !README
 !.gitignore
