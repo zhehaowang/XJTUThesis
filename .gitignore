@@ -1,6 +1,8 @@
 *
 !base/
+!base/*/
 !thesis/
+!thesis/*/
 !*.tex
 !*.sty
 !*.cls

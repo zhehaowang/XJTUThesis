@@ -1,0 +1,178 @@
+% multiple1902 <multiple1902@gmail.com>
+% appendice.tex
+% Copyright 2011~2012, multiple1902 (Weisi Dai)
+% https://code.google.com/p/xjtuthesis/
+% 
+% It is strongly recommended that you read documentations located at
+%   http://code.google.com/p/xjtuthesis/wiki/Landing?tm=6
+% in advance of your compilation if you have not read them before.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Weisi Dai.
+%
+\xjtuappendixchapter{文章翻译：Networking Named Content选段}
+
+\xjtuappendixsection{外文文献介绍及原文}
+\par
+本文翻译的文章是Van Jacobson et al.的提出命名数据网概念的第一篇文章，Networking named content。也是本文的主要参考文献。外文原文可以在2009年Sigcomm Conference找到\footnote{外文原文的链接之一，http://conferences.sigcomm.org/co-next/2009/papers/Jacobson.pdf}。在此给出翻译选段的原文。
+\subsection{外文原文}
+\par
+Network use has evolved to be dominated by content distribution and retrieval, while networking technology still speaks only of con- nections between hosts. Accessing content and services requires mapping from the what that users care about to the network’s where. We present Content-Centric Networking (CCN) which treats con- tent as a primitive – decoupling location from identity, security and access, and retrieving content by name. Using new approaches to routing named content, derived heavily from IP, we can simulta- neously achieve scalability, security and performance. We imple- mented our architecture’s basic features and demonstrate resilience and performance with secure file downloads and VoIP calls.
+\par
+The engineering principles and architecture of today’s Internet were created in the 1960s and ’70s. The problem networking aimed to solve was resource sharing — remotely using scarce and ex- pensive devices like card readers or high-speed tape drives or even supercomputers. The communication model that resulted is a con- versation between exactly two machines, one wishing to use the resource and one providing access to it. Thus IP packets contain two identifiers (addresses), one for the source and one for the des- tination host, and almost all the traffic on the Internet consists of (TCP) conversations between pairs of hosts.
+\par
+In the 50 years since the creation of packet networking, comput- ers and their attachments have become cheap, ubiquitous commodi- ties. The connectivity offered by the Internet and low storage costs enable access to a staggering amount of new content – 500 exabytes created in 2008 alone [13]. People value the Internet for what con- tent it contains, but communication is still in terms of where.
+\par
+We see a number of issues that affect users arising from this in- compatibility between models.
+\par
+Availability: Fast, reliable content access requires awkward, pre-planned, application-specific mechanisms like CDNs and P2P networks, and/or imposes excessive bandwidth costs.
+\par
+Security: Trust in content is easily misplaced, relying on untrustworthy location and connection information.
+Location-dependence: Mapping content to host locations complicates configuration as well as implementation of net- work services.
+\par
+The direct, unified way to solve these problems is to replace where with what. Host-to-host conversations are a networking ab- straction chosen to fit the problems of the ’60s. We argue that named data is a better abstraction for today’s communication prob- lems than named hosts. We introduce Content-Centric Networking (CCN), a communications architecture built on named data. CCN has no notion of host at its lowest level – a packet “address” names content, not location. However, we preserve the design decisions that make TCP/IP simple, robust and scalable.
+\par
+Figure 1 compares the IP and CCN protocol stacks. Most layers of the stack reflect bilateral agreements; e.g., a layer 2 framing pro- tocol is an agreement between the two ends of a physical link and a layer 4 transport protocol is an agreement between some producer and consumer. The only layer that requires universal agreement is layer 3, the network layer. Much of IP’s success is due to the sim- plicity of its network layer (the IP packet - the thin ‘waist’ of the stack) and the weak demands it makes on layer 2, namely: stateless, unreliable, unordered, best-effort delivery. CCN’s network layer (Section 3) is similar to IP’s and makes fewer demands on layer 2, giving it many of the same attractive properties. Additionally, CCN can be layered over anything, including IP itself.
+\par
+CCN departs from IP in a number of critical ways. Two of these, strategy and security, are shown as new layers in its pro- tocol stack. CCN can take maximum advantage of multiple si- multaneous connectivities (e.g., ethernet and 3G and bluetooth and 802.11) due to its simpler relationship with layer 2. The strategy layer (Section 3.3) makes the fine-grained, dynamic optimization choices needed to best exploit multiple connectivities under chang- ing conditions. CCN secures content itself (Section 5), rather than the connections over which it travels, thereby avoiding many of the host-based vulnerabilities that plague IP networking.
+\par
+We describe the architecture and operation of CCN in Sections 2 through 5. In Section 6 we evaluate performance using our pro- totype implementation. Finally, in Sections 7 and 8, we discuss related work and conclude.
+\par
+CCN communication is driven by the consumers of data. There are two CCN packet types, Interest and Data (Figure 2). A consumer asks for content by broadcasting its interest over all avail- able connectivity. Any node hearing the interest and having data that satisfies it can respond with a Data packet. Data is trans- mitted only in response to an Interest and consumes that Interest.1 Since both Interest and Data identify the content being exchanged by name, multiple nodes interested in the same content can share transmissions over a broadcast medium using standard multicast suppression techniques [3].
+\par
+Data ‘satisfies’ an Interest if the ContentName in the Interest packet is a prefix of the ContentName in the Data packet. CCN names are opaque, binary objects composed of an (explicitly speci- fied) number of components (see Figure 4). Names are typically hi- erarchical so this prefix match is equivalent to saying that the Data packet is in the name subtree specified by the Interest packet (see Section 3.2). IP uses this convention to resolve the ⟨net, subnet, host⟩ hierarchical structure of IP addresses and experience has shown it allows for efficient, distributed hierarchical aggregation of routing and forwarding state while allowing for fast lookups.2 One implication of this matching is that interests may be received for content that does not yet exist – allowing a publisher to gener- ate that content on the fly in response to a particular query. Such active names allow CCN to transparently support a mix of stati- cally cached and dynamically-generated content, as is common in today’s Web. Name prefixes may also be context-dependent such as /ThisRoom/projector to exchange information with the display projector in the current room or /Local/Friends to exchange infor- mation with any friends in the local (broadcast) environment.
+\par
+The basic operation of a CCN node is very similar to an IP node: A packet arrives on a face, a longest-match look-up is done on its name, and then an action is performed based on the result of that lookup.4 Figure 3 is a schematic of the core CCN packet forward- ing engine. It has three main data structures: the FIB (Forwarding Information Base), Content Store (buffer memory) and PIT (Pend- ing Interest Table).
+\par
+The FIB is used to forward Interest packets toward potential source(s) of matching Data. It is almost identical to an IP FIB except it allows for a list of outgoing faces rather than a single one. This reflects the fact that CCN is not restricted to forwarding on a spanning tree. It allows multiple sources for data and can query them all in parallel.
+\par
+The Content Store is the same as the buffer memory of an IP router but has a different replacement policy. Since each IP packet belongs to a single point-to-point conversation, it has no further value after being forwarded downstream. Thus IP ‘forgets’ about a packet and recycles its buffer immediately on forwarding com- pletion (MRU replacement). CCN packets are idempotent, self- identifying and self-authenticating so each packet is potentially use- ful to many consumers (e.g., many hosts reading the same newspa- per or watching the same YouTube video). To maximize the prob- ability of sharing, which minimizes upstream bandwidth demand and downstream latency, CCN remembers arriving Data packets as long as possible (LRU or LFU replacement).
+\par
+The PIT keeps track of Interests forwarded upstream toward con- tent source(s) so that returned Data can be sent downstream to its requester(s). In CCN, only Interest packets are routed and, as they propagate upstream toward potential Data sources, they leave a trail of ‘bread crumbs’ for a matching Data packet to follow back to the original requester(s). Each PIT entry is a bread crumb. PIT entries are erased as soon as they have been used to forward a matching Data packet (the Data ‘consumes’ the Interest). PIT entries for In- terests that never find a matching Data are eventually timed out (a ‘soft state’ model — the consumer is responsible for re-expressing the interest if it still wants the Data).
+\par
+When an Interest packet arrives on some face, a longest-match lookup is done on its ContentName. The index structure used for lookup is ordered so that a ContentStore match will be preferred over a PIT match which will be preferred over a FIB match.
+\par
+Thus if there is already a Data packet in the ContentStore that matches the Interest, it will be sent out the face the Interest arrived on and the Interest will be discarded (since it was satisfied).
+\par
+Otherwise, if there is an exact-match PIT entry the Interest’s ar- rival face will be added to the PIT entry’s RequestingFaces list and the Interest will be discarded. (An Interest in this data has already been sent upstream so all that needs to be done is to make sure that when the Data packet it solicits arrives, a copy of that packet will be sent out the face that the new Interest arrived on.)
+\par
+Otherwise, if there is a matching FIB entry then the Interest needs to be sent upstream towards the data. The arrival face is removed from the face list of the FIB entry then, if the resulting list is not empty, the Interest is sent out all the faces that remain and a new PIT entry is created from the Interest and its arrival face.
+\par
+If there is no match for the Interest it is discarded (this node does not have any matching data and does not know how to find any).
+\par
+Data packet processing is relatively simple since Data is not routed but simply follows the chain of PIT entries back to the orig- inal requester(s). A longest-match lookup of a Data packet’s Con- tentName is done upon arrival. A ContentStore match means the Data is a duplicate so it is discarded. A FIB match means there are no matching PIT entries so the Data is unsolicited and it is dis- carded.5 A PIT match (there may be more than one) means the Data was solicited by Interest(s) sent by this node. The Data is (op- tionally) validated (see Section 5.1) then added to the ContentStore (i.e., a C-type index entry is created to point to the Data packet). Then a list is created that is the union of the RequestingFaces list of each PIT match minus the arrival face of the Data packet. The Data packet is then sent out each face on this list.
+\par
+Unlike IP’s FIFO buffer model, the CCN Content Store model allows the node memory already required for stat muxing to simul- taneously be used for transparent caching throughout the network. All nodes can provide caching, subject only to their independent resource availabilities and policies.
+\par
+The multipoint nature of data retrieval by Interest provides flexi- bility to maintain communication in highly dynamic environments. Any node with access to multiple networks can serve as a content router between them. Using its cache, a mobile node may serve as the network medium between disconnected areas, or provide delayed connectivity over intermittent links. Thus CCN transport provides Disruption Tolerant Networking [11]. The Interest/Data exchange also functions whenever there is local connectivity. For example, two colleagues with laptops and ad-hoc wireless could continue to share corporate documents normally in an isolated lo- cation with no connectivity to the Internet or their organization.
+\par
+CCN transport is designed to operate on top of unreliable packet delivery services, including the highly dynamic connectivity of mo- bile and ubiquitous computing. Thus Interests, Data, or both might be lost or damaged in transit, or requested data might be temporar- ily unavailable. To provide reliable, resilient delivery, CCN Inter- ests that are not satisfied in some reasonable period of time must be retransmitted. Unlike TCP, CCN senders are stateless and the final consumer (the application that originated the initial Interest) is re- sponsible for re-expressing unsatisfied Interests if it still wants the data. A receiver’s strategy layer (see Figure 1) is responsible for re- transmission on a particular face (since it knows the timeout for the upstream node(s) on the face) as well as selecting which and how many of the available communication interfaces to use for send- ing interests, how many unsatisfied interests should be allowed, the relative priority of different interests, etc.
+\par
+Underlying packet networks might duplicate packets and CCN multipoint distribution may also cause duplication. All duplicate Data packets are discarded by the basic node mechanisms described in the preceding section. Though data cannot loop in CCN, Inter- ests can loop and make it appear as if there is Interest on a face where no interest actually exists. To detect and prevent this, Interest packets contain a random nonce value so that duplicates received over different paths may be discarded (see Figure 2).
+\par
+CCN Interests perform the same flow control and sequencing function as TCP ack packets. Flow control is described in the next section and sequencing in the following one. Since a node is guar- anteed to see any Data resulting from its Interests, response time and rate can be directly measured and used to adaptively determine the best way to satisfy Interests in some prefix. This is described in the third section.
+\par
+One Interest retrieves at most one Data packet. This basic rule ensures that flow balance is maintained in the network and allows efficient communication between varied machines over networks of widely different speeds. Just as in TCP, however, it is possible to overlap data and requests. Multiple Interests may be issued at once, before Data arrives to consume the first. The Interests serve the role of window advertisements in TCP. A recipient can dynamically vary the window size by varying the Interests that it issues. We show the effect of such pipelining later in Section 6.2. Since CCN packets are independently named, the pipeline does not stall on a loss – the equivalent of TCP SACK is intrinsic.
+\par
+In a large network, the end-to-end nature of TCP conversations means there are many points between sender and receiver where congestion can occur from conversation aggregation even though each conversation is operating in flow balance. The effect of this congestion is delay and packet loss. The TCP solution is for end- points to dynamically adjust their window sizes to keep the aggre- gate traffic volume below the level where congestion occurs [20]. The need for this congestion control is a result of TCP’s flow bal- ance being end-to-end. In CCN, by contrast, all communication is local so there are no points between sender and receiver that are not involved in their balance. Since CCN flow balance is maintained at each hop, there is no need for additional techniques to control congestion in the middle of a path. This is not the same as hop- by-hop flow control, where backpressure between adjacent nodes is used to adjust resource sharing among continuous flows. CCN does not have FIFO queues between links but rather an LRU mem- ory (the cache) which decouples the hop-by-hop feedback control loops and damps oscillations. (We will cover this topic in detail in a future paper.)
+\par
+In a TCP conversation between hosts, data is identified by simple sequence numbers. CCN needs something more sophisticated be- cause consumers are requesting individual pieces from large collec- tions of data and many recipients may share the same Data packets. Locating and sharing data is facilitated by using hierarchical, aggregatable names that are at least partly meaningful to humans and reflect some organizational structure of their origin, rather than just the sequence in an ephemeral conversation. Despite this extra rich- ness in CCN names, their transport function in Interests is exactly the same as that of sequence numbers in TCP ACKs: specifying the next Data the recipient requires.
+\par
+Before explaining how the next Data is identified, we first de- scribe the names in more detail. As mentioned, names are hier- archically structured so that an individual name is composed of a number of components. Each component is composed of a num- ber of arbitrary octets – variable-length binary values that have no meaning to CCN transport. Names must be meaningful to some higher layer(s) in the stack to be useful, but the transport imposes no restrictions except the component structure. Binary encodings of integers or other complex values may be used directly without conversion to text for transmission. Name components may even be encrypted for privacy. For notational convenience, we present names like URIs with / characters separating components, as in Figure 4, but these delimiters are not part of the names and are not included in the packet encodings. This example illustrates the application-level conventions currently used to capture temporal evolution of the content (a version marker, \_v encoded as FD, followed by an integer version number) and its segmentation (a segment marker, \_s encoded as 00, followed by an integer value which might be a block or byte number or the frame number of the first video frame in the packet). The final component of every Data packet name implicitly includes a SHA256 digest of the packet.
+\par
+An Interest can specify precisely what content is required but in most cases the full name of the next Data is not known so the consumer specifies it relative to something whose name is known. This is possible because the CCN name tree can be totally ordered (siblings are arranged in lexicographic order) thus relations like next and previous can be unambiguously interpreted by the CCN trans- port without any knowledge of name semantics.
+\par
+For example, Figure 5 shows a portion of the name tree associated with Figure 4. An application that wants to display the most recent version of the video would express interest in ‘/parc.com/ videos/WidgetA.mpg RightmostChild’ which results in the highlighted traversal and yields the first segment of the second version of the video. Once this was retrieved, the next segment could be obtained by sending an Interest containing its name with aLeftmostRightSibling annotation or by simply computing the \_s1 portion of the name since the segmentation rules are known (and determined) by the application.
+\par
+As this example illustrates, the naming conventions for pieces of data within a collection can be designed to take advantage of the relative retrieval features of Interest packets and applications can discover available data through tree traversal. Although such nam- ing conventions are not part of basic CCN transport, they are an important element of application design. We anticipate that a wide va- riety of reusable conventions will be standardized and implemented in shared libraries to provide applications with high-level abstrac- tions such as files and media streams over CCN.
+\par
+Interests, then, provide a form of restricted query mechanism over accessible content collections in a CCN, designed for efficient expression of what the receiver requires next. We do not have space to describe the details of the query options under development. It will be possible to restrict results by publisher, not just by collection, and to exclude content already obtained when simple ordering is insufficient. We are also developing higher level name discov- ery mechanisms that are more efficient for exploring large name subtrees when the content itself is not required.
+\xjtuappendixsection{中文译文}
+\subsection{摘要}
+\par
+现今，网络使用已由数据发布与请求所主宰，而网络通信仍是基于多个端点的地址。用户的数据及服务请求需要经过所请求数据到数据所在地址的映射。本文提出以内容为中心的网络架构(Content Centric Networking, CCN)，将数据，而不是地址，作为网络架构的基本单元，并把数据和地址、安全及访问区分开来，同时以数据的名称来请求对应的数据。
+\par
+\subsection{简介}
+当今网络的架构和设计原则继承着60年代、70年代的思路，当时所希望解决的主要问题是资源共享，即由多个终端远程访问共享的昂贵资源，比如读卡器或是高速磁带硬盘。由此开发出的通信模型可以抽象为两点之间的信息交互：服务请求方希望使用服务提供方的特定服务。因而IP报文中包含两个标示符，目的地址和源地址。而网络中的几乎所有流量(大多是基于TCP协议的会话)，都是数对请求方、提供方之间的通信。
+\par
+基于数据报交互的网络架构形成的50年来，计算机及其附件变得便宜和大众化。网络所提供的方便的互联性和低存储成本使得2008年一年就发布了500EB的数据。大众对网络价值的衡量变得倾向于其所提供的数据本身，而不是数据具体存储在哪里。
+\par
+这两种模型之间的差异在以下几个方面影响到了用户。
+\begin{itemize}
+\item
+可用性：高速、可靠的数据访问需要利用不自然的、预先计划好的，且不同应用之间难以共享的解决方案，例如CDN和点对点网络。这些解决方案同时消耗了多余的带宽资源。
+\item
+安全：基于来源位置和连接信息的安全模型容易混淆对数据本身的信任。
+\item
+地点有关性：将数据映射到所在位置使得配置和实现网络服务更加复杂。
+\end{itemize}
+\par
+直接、统一的解决这些问题的方案是用“什么”取代“哪里“。端对端通信模型仅适用于60年代的用例。本文认为，基于数据名称而不是位置的命名数据网将是能够更好描述当今网络用户需求的网络架构模型。CCN底层并没有“端”或地址的概念，取而代之的数据的名称。然而，其设计仍然保留TCP/IP协议栈简单、鲁棒和可扩展的设计原则。
+\par
+图1\footnote{翻译中不再拷贝原文的图片，请直接按照原文图片编号进行参考}对比CCN和IP协议栈。协议栈中大多数层体现了两者之间的相似性，比如第二层的成帧协议体现了物理链路中发送方、接收方之间的协商，第四层传输层协议体现了数据或服务的请求者、提供者之间的协商。承上启下，为双方提供统一接口的第3层，即网络层，体现了IP协议成功的许多因素。首先，网络层对链路层提供的服务的需求很少，无状态、不可靠、不保序、尽力而为即可。CCN的网络层(即第三层)，在这一点上和IP是吻合的，即不对链路层提供的服务提出过高要求。这一点为其保留了IP较多优点。同时值得一提的是，CCN也可以作为多层的负载，包括作为IP的负载。
+\par
+CCN在许多关键点上不同于IP。其中两者是策略和安全。两者作为其协议栈中新出现的层。CCN可以最大化利用同时存在的多个连接，比如以太网、3G、蓝牙和802.11，因为CCN和第二层的关系更加简单。策略层在变化的外界条件下，根据多个同时存在的连接，做出详细的、动态的优化，从而最大化的利用多个连接。安全层保障数据本身是受信任的，而不是数据所经过的通路是受信任的，由此避免了安全策略上IP网络的许多问题。
+\par
+本文的2~5章将描述CCN的架构和流程；第6章基于我们的初步实现，对其进行评估；第7、8章讨论未来的工作方向并总结。
+\par
+\subsection{CCN节点模型}
+CCN网络通信是由数据请求方驱使的。网络中有两种包，数据请求(Interest)和数据应答(Data)。数据请求方向本地的所有连接广播数据请求，任何收到数据请求，并且有名称满足要求的数据的节点可以应答。数据应答包的发出都是由收到特定的请求所触发，换言之，数据应答包都是为了满足特定的请求。由于请求包、应答包都是通过名称索引的，多个请求同样名称的节点收到的应答包可以在广播媒介上用传统的多播压缩手段共享[3]\footnote{翻译中不再拷贝原文的参考文献，参考原文的参考文献编号}。
+\par
+当且仅当数据请求包的名称是数据应答包的名称的前缀子串时，数据应答可以满足数据请求。CCN名称是由多个部分组成的透明的二进制对象(见图4)。传统意义上的名称都是层次结构的，所以前缀的吻合可以描述为数据应答包的名称是数据请求包的名称的子树(见3.2)。IP用同样的方式来解析树状的IP地址，即<网络地址，子网地址，主机地址>。IP的经验表明，这样的方式可以实现路由表树型的高效压缩和快速查找。这种匹配方式中其中值得一提的一点是节点可能收到对于尚不存在于网络中的数据的请求，这使得数据的提供方可以利用数据请求方指定的名称产生并发布数据。这样的“动态名称”使得CCN透明的支持动态生成的数据和静态缓存的数据，这两者在当今网络中扮演了重要角色。名称前缀也可能是上下文相关的，比如”/ThisRoom/Projector”可以用来和局部环境中存在的投影仪进行交互。而”/Local/Friends”可以和局部环境中的朋友进行交互。
+\par
+CCN节点的工作方式和IP节点是类似的：节点收到数据包，进行最长前缀匹配，并由匹配结果决定下一步行动。图3是CCN前递逻辑的结构图。其中主要有三个数据结构：前递表(Forwarding Information Base)，数据缓存(Content Store)和待应答表(Pending Interest Table)。
+\par
+前递表的作用是将数据请求传递向可能有对应的数据应答的节点。这与IP的路由表是相近的，但是它允许一个表项和多个接口进行匹配，而不是对于每一个接口，存在一张路由表。这一点体现了CCN不局限于基于一颗生成树的前递，其允许一个节点同时对多个连接的数据源进行请求，多个数据源也可以同时处理收到的请求。
+\par
+数据缓存和IP路由的缓存作用近似，但是替换策略不同。由于每个IP包包含了源和目的地址，其对于别的点之间的交互是不起到作用的。因此，IP路由器在将收到的包写入缓存，然后转发出去之后，就可以将该包擦除(利用最近使用(MRU)替换)。CCN包是幂等，自识别和自授权的，因而每一个包有可能可以满足多个用户的数据请求(比如多个看同样的报纸和Youtube视频的用户)，只要数据请求的名称匹配。为了最大化数据共享的可能性，从而最小化上行带宽的占用和下行的延迟，CCN尽可能长时间的缓存数据包(利用最近/最少未使用替换)。
+\par
+待应答表保存了向数据提供方前递的数据请求(上行请求)，因此当收到数据提供方的应答时，可以根据待应答表中的记录将数据应答传送给数据请求方。因此，在CCN中，只有数据请求包在上行时经过路由，并在经过路由节点的同时留下一系列的记录，下行的数据应答包可以根据路由节点的记录找到数据的请求者。在路由节点收到下行数据应答后，其将所收数据应答对待应答表中的对应表项中的所有节点进行多播，并且擦除该表项。长时间没有收到数据应答的数据请求会超时，而如果数据请求方仍然希望请求该数据，请求方应当负责重新发送数据请求。
+\par
+当数据请求包到达某节点的某接口后，节点首先进行名称的最长前缀匹配。上述数据结构的查找是有序的，所以数据缓存的匹配优先级高于待应答表，高于前递表。
+\par
+因此，在一个节点收到请求后，如果数据缓存找到了满足请求的数据，会直接返回该数据，同时收到的请求由于已经被满足而会被丢弃。
+\par
+如果数据缓存没有前缀匹配项，而待应答表中有名称完全匹配项，收到请求的接口会被加入到路由节点待应答表中该名称的下行接口表上，同时收到的请求会由于别人已经在请求同名数据，且别人的请求已经向数据源上行而被丢弃。这时路由节点所要做的只是当数据应答到来时，将数据应答也向这个数据请求的接口发送一份。
+\par
+如果二者都没有匹配项，而前递表有匹配项，则数据请求根据前递表的匹配项上行。收到请求的接口将会被从前递表匹配项上移除，如果前递表匹配项此时仍不为空，则对于其所记录的每一个接口发送该数据请求。并以收到请求的接口，创建一个新的待应答表项。
+\par
+如果三者都没有匹配的表项，则丢弃该数据请求，因为收到请求的路由节点既没有满足要求的数据，也不知道该向哪里前递已获取满足要求的数据。
+\par
+数据应答包的处理要相对简单。由于数据应答包不经过路由，而是直接根据待应答表进行下行，在收到数据应答时，首先进行名称的最长前缀匹配。如果数据缓存有匹配项，则收到了重复的数据，予以丢弃。如果前递表发现了满足项，则说明待应答表中没有满足项，说明数据没有请求者，是不需要的，予以丢弃。如果带应答表中发现满足项，则(可选的)进行数据核实和写入数据缓存，之后根据待应答表的满足项移除收到数据应答的接口后，对满足项中的其它接口进行下行。
+不同于IP先入先出的缓存模型，CCN缓存模型允许整个网络的节点缓存实现透明缓存。所有节点可以根据自己的能力和策略进行缓存。
+\par
+通过数据请求指定的多点数据回取的特点使得CCN在变化快速的环境下依然可以灵活应用。任何处在多个网络中的节点可以作为其所处的多个网络之间的缓存和路由。利用其缓存，一个移动的节点可以作为多个彼此不相连区域进行连接的媒介，或者为不连贯的链路提供延迟的连接。因此，CCN的传输是允许干扰的(Disruption Tolerant Networking[11])。数据请求/应答的交互在仅有局域网连接时也可以正常工作，比如，两个处于同一自组织无线网的同事可以在二人没有公司局域网或广域网连接的情况下共享文件。
+\subsection{传输}
+\par
+CCN传输是基于不可靠的包交互设计的，其包括对高度动态的连接性的移动和普及计算。因此，数据请求、应答都可能在传输中丢包或是损坏，或者请求的数据会短时不可用。为了提供可靠的传输，一段时间内没有得到满足的CCN数据请求必须进行重传。不同于TCP，CCN发送方是无状态的。因而如果请求者依然希望得到数据，数据请求者需为重传请求负责。接收方策略层将为某一特定接口的数据请求重传进行负责(因为它会得到该接口上行数据请求超时的通知)，同时，接收方也应决定向多少、哪些可用的连接发送请求，允许多少未收到应答的请求存在，和不同数据请求之间的优先级等等。
+\par
+下层的数据包交互网络和CCN的多点交互可能会产生多个同样的数据包。根据上述逻辑，同样的数据应答包会被节点丢弃。虽然数据应答不会在CCN的结构中形成环路，数据请求是可能形成环路的，并且使其看起来像是有数据请求存在，实际没有数据请求存在。为了检测和避免数据请求的环路，数据请求应包含一个随机生成的随机数字段(nonce)，多个接口在收到相同随机数的数据请求时也可以丢弃对应的数据请求。
+\par
+CCN请求的流量控制和序号和TCPACK包是类似的，二者将在后面继续讨论。另外，一个节点必然可以看到其请求带回的应答，且反应时间和速度可以直接测量并用于决定对于某些前缀满足请求的最好方式的特性将在第3部分讨论。
+
+\subsection{可靠性和流量控制}
+\par
+一个数据请求最多可以带回一个数据应答。这项原则为网络维持请求、应答的平衡。从而使得连接速度不同的机器更有效的交互。这与TCP的设计是类似的，只是可以重叠数据应答和请求。多个数据请求可以同时发出，取回的数据应答将满足第一个请求。在此用例中请求起到的作用类似TCP的滑动窗口。收方可以通过调整其发出兴趣的多少，来实时的控制窗口的大小。如此的流水线式的设计造成的影响在6.2中讨论。由于每个CCN包是独立命名的，在出现丢包时流水线不会停顿，这一点与TCP SACK的固有性是一致的。
+\par
+在大型网络中，TCP会话端对端的性质意味着即使每个会话满足流量出入平衡，端对端之间的节点仍然会出现拥塞，由于多组会话可能都通过同一个中间节点。这样的拥塞导致的结果是延迟和丢包。对于此问题，TCP的解决方案是由断点实时设置其窗口大小，从而使得汇聚后的流量仍然低于拥塞出现的流量。这样的拥塞控制本质上是由TCP会话的端对端特性导致的。而在CCN中，不同的是每个点都满足数据请求、数据应答的出入平衡。因为CCN流量控制是每一跳都满足的出入平衡，所以不需要为了防止某一中间节点出现拥塞而另外设计方案。这一点和利用相邻节点的反馈来维持每一跳的流量平衡的方案是不同的。CCN中取代链路间的先入先出队列缓存的是最近最少未使用缓存，其可以起到解开每两跳间反馈控制的反馈环和欠阻尼震荡的作用。(这一点将在未来的论文中讨论)
+
+\subsection{排序}
+\par
+在端对端的TCP会话中，数据包是通过序号唯一识别的。CCN需要实现更复杂的策略，因为数据请求方可能会请求大块数据的某一特定部分，并且该部分将可能与多个别的请求者共享。数据的定位和共享数据通过部分上有实际意义，人可阅读的，树状名称实现，而不是通过某一当前会话中的序列号。尽管CCN名称显得丰富很多，它们对传输过程起到的作用和TCP ACK的序列号是相同的，即指定请求方需要请求的下一块数据。
+\par
+在阐述如何描述下一块数据前，我们先更详细的解释名称。如前面所提到的，名称是树状结构的，树中的每一个节点是名称中的一块。每一块由事先规定好的字节开始，名称本身对CCN的传输不起影响。名称需要体现上层协议的设计思路，从而对上层应用有意义。名称的传输除了要保留块结构外，并没有其它的要求。整型或是其它更复杂的数据类型可以直接使用其二进制编码进行传输，而不必转化为文本。出于隐私性的考虑，可以加密特定的名称块。为了表达方便，本文中名称的表示形式类似URI，如图4所示，用’/’来划分多个名称块。需要注意的是’/’本身并不是名称中的一部分，也不应出现在名称的二进制编码中。下面的例子介绍了应用层当前采用的命名大块数据的方式(利用一个版本标示符，\_v，编码为FD，加上一个整型的版本号；和一个分块标示符，\_a，编码为00，加上一个整型的块编号。这样的块编号的含义可以是大块数据中某一部分的帧编号；某一特定的字节编号；或是视频传输中的某一帧的序号)。每个数据应答包名称的最后一个部分隐式包含了该包的SHA256哈希值。数据请求包可以准确指定需求的哪一块数据，但是在很多用例中下一块数据的全名是不清楚的。请求者可以在名称中通过指定下一块数据和上一块在名称上的关系，来请求下一块数据。这一点的原因是CCN名称树是完全有序的，同一父节点的子节点按照字典序排列，前一或者后一这样的关系可以被完全不了解名称语义的中间节点无二意的理解。
+\par
+例如，图5是图4种名称树的一部分。一个需要显示最新一帧画面的应用可以通过发出/parc.com/videos/WidgetA.mpg RightMostChild的数据请求来完成图中高亮的遍历方式，从而取回该视频中第一块的第二版。在取回这一块后，下一块的取回可以通过“本块最左的右兄”名称标示符，或是根据应用设计的名称空间，计算出名称\_s1。
+\par
+如此例中所示，数据命名的分块是为了利用名称树的依据相对关系遍历的特点。尽管命名规则本身不是CCN传输的一部分，它们却是应用开发中最为重要的。我们希望开发出一系列的可重用的命名空间开发规范，并在共享的函数库中进行实现和标准化，从而为应用开发者抽象出更高层的库支持，例如基于CCN的文件传输，视频流传输等。
+\par
+综上，数据请求包提供了整个CCN网络由标示符限制的查询功能，该功能使得请求者可以方便的制定下一块请求的数据。在此受到篇幅限制，我们对当前设计的标示符不予讨论。在未来的实现中，不仅可以对应答方的资源做相对关系的限制，还将可以除去特定名称对应的名称子块。同时我们还在开发高层的名称发现策略，从而使得用户可以在大的名称树中不请求数据本身的情况下浏览名称树。

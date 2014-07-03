@@ -1,0 +1,41 @@
+% multiple1902 <multiple1902@gmail.com>
+% conclusion.tex
+% Copyright 2011~2012, multiple1902 (Weisi Dai)
+% https://code.google.com/p/xjtuthesis/
+% 
+% It is strongly recommended that you read documentations located at
+%   http://code.google.com/p/xjtuthesis/wiki/Landing?tm=6
+% in advance of your compilation if you have not read them before.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Weisi Dai.
+%
+\chapter{结论与展望}
+\echapter{Conclusion}
+\label{ConclusionChapter}
+\section{结论}
+\par
+NDN是一种以数据及其名称为基本对象的新网络架构。本文提出、测试并理论分析了一个在NDN网络中运行的纯P2P的多人联机游戏应用的设计方案。该方案面临的主要问题是在分布环境下各个节点信息的同步，即每个节点需要通过和网络交互，获取谁在我的周围，以及它在哪里，在做什么等问题的答案。
+\par
+方案首先对虚拟环境进行固定的八叉树划分，并对划分后得到的每个小立方体中的对象的名称集进行同步。各个节点定时广播本地感知范围内的立方体的名称集的消息摘要，收到不同的消息摘要的节点回复本地的名称集。收到包含不同名称的数据应答的节点根据其中的名称构成位置和动作数据请求，从而获得具体节点的位置，并决定是否渲染，以及是否加入到本地对应立方体的名称集中。
+\par
+方案满足了局部性、实时性、可拓展性和健壮性的要求。在详细叙述方案后，本文分析了实际测试的结果，并详细分析了和早期的三个设计方案，和IP下的实现的优劣的对比。
+\section{展望}
+\par
+本文涉及到的工作在许多方面仍然有可以改进之处。
+\par
+进行实际环境的测试和IP下不同实现的对比。构建类似功能和参数的IP下的C/S和P2P架构的实现，并衡量每个节点的出入流量，延迟时间，从而得到在更大规模的环境下本方案是否可行，和IP相比优劣如何的结论。
+\par
+测试优化中提出的数个思路是否对效率的提升起到作用。并为位置数据应答设计和实现版本信息，在数据请求中过滤版本信息，从而获得更多更为连贯的最新位置更新。
+\par
+游戏渲染优化。插值和预估是使渲染流畅的常用策略。插值使位置渲染平滑化；预估使得一个往返时间的延迟固定存在时，延迟看起来更小。
+
