@@ -1,8 +1,8 @@
-*.doc
-*.docx
-*.pdf
-*.out
-*.aux
-*.toc
-*.log
-*.pptx
+*
+!thesis/
+!*.tex
+!*.sty
+!*.cls
+!base/
+!README
+!.gitignore
